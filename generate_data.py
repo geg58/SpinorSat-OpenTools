@@ -8,16 +8,16 @@ import igrf12
 # ----- Constants ----- #
 
 # Torque Parameters
-voltage = 0.1
-B = 0.00003
-I = 0.3 # amps
-D = 0.001
-A = D * D
-N = 200
+voltage = 0.1 # This is the voltage across the torque coil.
+B = 0.00003 # This is magnetic field of the torque coil?
+I = 0.3 # This parameter is the current going through the torque coil. This current can go either direction through the coils.
+D = 0.001 # This parameter is set by the length of the PCB.
+A = D * D # This parameter is set by the area of the PCB.
+N = 200 # This parameter is set by the number of coils on a magnetorquer.
 
 # Board Inertia Parameters
-l = .035
-m = 0.005
+l = .035 # This parameter is set by the inertia and CoM of the PCB.
+m = 0.005 # This parameter is set by the mass of the PCB.
 
 torque_time = 0.1
 

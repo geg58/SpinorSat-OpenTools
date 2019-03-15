@@ -70,7 +70,7 @@ def power_model(df):
 if __name__ == "__main__":
     '''
 	
-	For example: python3 tensorflow_power_model.py -f fullunique_1545365126.csv
+	For example: python3 tensorflow_power_model.py -f data.csv
 
     '''
     tf.logging.set_verbosity(tf.logging.INFO)

@@ -2,15 +2,18 @@
 
 *What this repo includes:*
 
-- A walkthrough of how to use datasets within repo
+- A walkthrough of how to use datasets within repo (Satellite magnetic sample data and random initialization of gyro data)
 - A walkthrough on ML/AI approaches to specific problems
-- Potential projects to work on
+  - please see Python Notebook
+- Potential projects to work on and plotting of satellite objects
+  - **Please visit the resources_docs folder for more useful info!** 
 
 
 
-Please visit the resources_docs folder for more useful info! 
+*In order to generate the datasets within this repo we utilized the following:*
 
-
+- We used the Open Notify API (http://open-notify.org/Open-Notify-API/ISS-Location-Now/) to gather the timestamp, latitude and longitude of the ISS at 10 second increments. Because of the inherent uncertainty in position models for the ISS, we opted for a larger time gap (10 seconds) but this could be reduced to 5 seconds. 
+- We use a Python library that implements the 12th Generation International Geomagnetic Reference Field (IGRF12) to calculate the Earth’s magnetic field at a specified latitude, longitude and altitude. We use the latitude and longitude from the previous step and set a standard altitude of 330km. This returns the magnetic field data in the x, y and z direction. 
 
 This ReadMe is useful for torquing and controlling the PCBSat you are developing. This utilizes magnetorquers in order to despin the initial spin of the PCBSat. 
 

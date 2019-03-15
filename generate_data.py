@@ -4,6 +4,7 @@ import random
 import math
 import argparse
 import igrf12
+from sklearn.preprocessing import MinMaxScaler
 
 # ----- Constants ----- #
 
@@ -102,6 +103,26 @@ def add_gyro(df):
 	return True
 
 
+def add_axis_power(df):
+	axisLst = []
+	powerLst = []
+	for i, row in df.iterrows():
+		x_i = df.iloc[i][3:9]
+		mag_data = [x_i[0], x_i[1], x_i[2]]
+		gyro_data = [x_i[3], x_i[4], x_i[5]]
+		axis, power = magnetorquer_output(mag_data, gyro_data)
+
+		axisLst.append(int(axis))
+		powerLst.append(power)
+
+	df['axis'] = axisLst
+	df['power'] = powerLst
+
+	scaler = MinMaxScaler()
+	df['power_norm'] = scaler.fit_transform(df['power'].values.reshape(-1, 1))
+	df['power_norm'] = df['power_norm'].apply(lambda x: x*100)
+
+
 def update_gyro(df):
 	g_data_arr = [[df.loc[0, 'gyro_x'], df.loc[0, 'gyro_y'], df.loc[0, 'gyro_z']]]
 	for index, row in df.iterrows():
@@ -133,6 +154,7 @@ if __name__ == "__main__":
 	df = pd.read_csv(file_name)
 	add_mag(df)
 	add_gyro(df)
+	add_axis_power(df)
 	g_data_arr = update_gyro(df)
 	g_data_arr = g_data_arr[:len(g_data_arr) - 1]
 	df['gyro_x'] = np.array(g_data_arr).T[0]

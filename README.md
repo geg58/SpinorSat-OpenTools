@@ -8,7 +8,9 @@
 
 
 
+This repo is useful for torquing and controlling the PCBSat you are developing. This utilizes magnetorquers in order to despin the initial spin of the PCBSat. 
 
+![](/Users/travisbrashaers/SpinorSat-OpenTools/Images/gyro_torque_control.png)
 
 
 

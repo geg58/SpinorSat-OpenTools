@@ -2,7 +2,8 @@
 
 *What this repo includes:*
 
-- A walkthrough of how to use datasets within repo (Satellite magnetic sample data and random initialization of gyro data)
+- A walkthrough of how to use datasets within repo 
+  - Satellite magnetic sample data and random initialization of gyro data
 - A walkthrough on ML/AI approaches to specific problems
   - please see Python Notebook
 - Potential projects to work on and plotting of satellite objects

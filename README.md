@@ -30,7 +30,7 @@ Here is an example of the magnetic data from the ISS in X,Y,Z. Pretty neat! The 
 
 ![](/Images/Mag_data_ISS.jpg)
 
-Run ``python3 data_gen.py -f iss_loc_data_{timestamp}.csv`` where timestamp corresponds to the file created in the previous step. This will create an output file in the current directory that contains magnetometer data (x,y,z), gyrometer data (x,y,z), and the expected axis and power that the PCBSat should rotate along in addition to the file's previous contents. This output file will be titled ``full_{timestamp}.csv``. The units for the magnetometer data are Gauss and the units for the gyrometer data are radians/second.  The units for power are a value between 0 to +/- 100 where 100 is the max current allowed through the magnetorquer.
+Run ``python3 generate_data.py -f <file_name>`` where timestamp corresponds to the file created in the previous step. This will create an output file in the current directory that contains magnetometer data (x,y,z), gyrometer data (x,y,z), and the expected axis and power that the PCBSat should rotate along in addition to the file's previous contents. The units for the magnetometer data are Gauss and the units for the gyrometer data are radians/second.  The units for power are a value between 0 to +/- 100 where 100 is the max current allowed through the magnetorquer.
 
 
 
